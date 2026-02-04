@@ -12,14 +12,13 @@ The Bird Model is a C++ Pawn class that represents a bird entity in the game. It
 
 **Features:**
 - Flight mechanics with configurable speed
-- Turn rate control
 - Customizable bird species
 - Flying state management
 - Blueprint-callable functions for controlling bird behavior
+- Collision-aware movement
 
 **Properties:**
-- `FlightSpeed`: Controls how fast the bird flies (default: 600.0)
-- `TurnRate`: Controls the bird's turning speed (default: 45.0)
+- `FlightSpeed`: Controls how fast the bird flies in units per second (default: 600.0)
 - `bCanFly`: Whether the bird is capable of flight (default: true)
 - `BirdSpecies`: Name of the bird species (default: "Generic Bird")
 

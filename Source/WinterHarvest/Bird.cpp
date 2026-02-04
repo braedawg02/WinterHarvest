@@ -12,11 +12,9 @@ ABird::ABird()
 
 	// Initialize default values
 	FlightSpeed = 600.0f;
-	TurnRate = 45.0f;
 	bCanFly = true;
 	BirdSpecies = TEXT("Generic Bird");
 	bIsFlying = false;
-	FlightDirection = FVector::ForwardVector;
 }
 
 // Called when the game starts or when spawned
@@ -33,8 +31,9 @@ void ABird::Tick(float DeltaTime)
 	// If the bird is flying, move it forward
 	if (bIsFlying && bCanFly)
 	{
-		FVector NewLocation = GetActorLocation() + (FlightDirection * FlightSpeed * DeltaTime);
-		SetActorLocation(NewLocation);
+		FVector ForwardDirection = GetActorForwardVector();
+		FVector NewLocation = GetActorLocation() + (ForwardDirection * FlightSpeed * DeltaTime);
+		SetActorLocation(NewLocation, true);
 	}
 }
 

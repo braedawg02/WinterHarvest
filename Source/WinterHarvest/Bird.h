@@ -27,22 +27,18 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	// Bird properties
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird Properties")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird Properties", meta = (ToolTip = "Flight speed in units per second"))
 	float FlightSpeed;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird Properties")
-	float TurnRate;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird Properties")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird Properties", meta = (ToolTip = "Whether this bird can fly"))
 	bool bCanFly;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird Properties")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bird Properties", meta = (ToolTip = "Name of the bird species"))
 	FString BirdSpecies;
 
 private:
 	// Internal bird state
 	bool bIsFlying;
-	FVector FlightDirection;
 
 public:
 	// Bird behaviors
